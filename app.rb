@@ -12,3 +12,7 @@ end
 get '/catto' do
   erb(:index)
 end
+
+get '/test' do
+  erb "Hi there, Visitor <% var = 2 + 2 %> <%= var %>"
+end
