@@ -9,10 +9,13 @@ get '/secret' do
     'This is a secret page, now with shotgun??' 
 end
 
-get '/catto' do
+get '/random-catto' do
+  @name = ["Amigo", "Oscar", "Viking"].sample
   erb(:index)
 end
 
-get '/test' do
-  erb "Hi there, Visitor <% var = 2 + 2 %> <%= var %>"
+get '/named-catto' do
+  p params
+  @name = params[:name]
+  erb(:index)
 end
